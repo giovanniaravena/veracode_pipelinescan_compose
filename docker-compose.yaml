@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  ubuntu:
+    container_name: pipelinescan-ubuntu
+    build: ./
+    tty: true 
+    expose:
+      - 80:80
+    volumes:
+      - .:/home/user1/
+      # - .:/root/.bash_history
+    restart: on-failure
+    command: ["sleep","infinity"]
